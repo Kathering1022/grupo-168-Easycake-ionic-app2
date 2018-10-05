@@ -1,0 +1,11 @@
+{
+  "name": "foodkart",
+  "integrations": {},
+  "pro_id": "easycake-b8e27",
+  "watchPatterns": [
+    "scss/**/*",
+    "www/**/*",
+    "!www/lib/**/*",
+    "!www/**/*.map"
+  ]
+}
