@@ -1,0 +1,46 @@
+<ion-view style="" class=" " id="page6" title="¡Registrate tu Negocio!">
+    <ion-content class="has-header" padding="true" style="background: #DCCEC3 center; background-size: cover;">
+        <form name="signupForm" class="list " id="signup-form2">
+            <ion-list class=" " id="signup-list3">
+
+			   <div class="app-icon"></div>
+
+              <label class="item item-input item-floating-label">
+                <span style="color: #9F9F9F;"  class="input-label">Razon Social</span>
+                <input style="color: #ffffff;" ng-model="user.name" type="text" placeholder="Razon Social">
+              </label>
+
+              <label class="item item-input item-floating-label">
+                <span style="color: #9F9F9F;" class="input-label">Actividad Economica</span>
+                <input style="color: #ffffff;" ng-model="user.phone" type="text" placeholder="Actividad Economica">
+              </label>
+
+              <label class="item item-input item-floating-label">
+                <!--Label nuevo... #9c2426-->
+                <span style="color: #9F9F9F;" class="input-label">Direccion</span>
+                <input style="color: #ffffff;" ng-model="user.address" type="text" placeholder="Direccion">
+              </label>
+
+              <label class="item item-input item-floating-label">
+                <!--Label nuevo...-->
+                <span style="color: #9F9F9F;" class="input-label">Barrio-Ciudad</span>
+                <input style="color: #ffffff;" ng-model="user.city" type="text" placeholder="Barrio-Ciudad">
+              </label>
+
+              <label class="item item-input item-floating-label">
+                  <span style="color: #9F9F9F;" class="input-label">Telefono</span>
+                  <input style="color: #ffffff;" ng-model="user.email" type="tel" placeholder="Telefono">
+              </label>
+
+              <label class="item item-input item-floating-label">
+                  <span style="color: #9F9F9F;" class="input-label">Correo Electronico</span>
+                  <input style="color: #ffffff;" ng-model="user.password" type="email" placeholder="Correo Electronico">
+              </label>
+
+            </ion-list>
+            <div style="width: 279px; height: 35px;" class="spacer"></div>
+            <button ng-click="signupEmail(signupForm,user)" class=" button button-assertive  button-block  icon-left ion-ios-email-outline " style="border-radius:0px 0px 0px 0px;" id="signup-button3">Actualizar</button>
+            <!--<button class=" button button-positive  button-block icon-left ion-social-facebook " style="border-radius:0px 0px 0px 0px;" id="signup-button4">Crear cuenta</button>-->
+        </form>
+    </ion-content>
+</ion-view>
