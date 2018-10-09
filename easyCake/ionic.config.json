@@ -1,0 +1,7 @@
+{
+  "name": "easyCake",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "ionic-angular"
+}
