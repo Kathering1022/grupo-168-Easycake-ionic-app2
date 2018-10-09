@@ -1,4 +1,5 @@
 {
+  "USERNAME": "Nombre usuario",
   "NAME": "Nombre",
   "PASSWORD": "Contraseña",
   "EMAIL": "Email",
@@ -10,7 +11,9 @@
   "TAB3_TITLE": "Ajustes",
 
   "MAP_TITLE": "Mapa",
-
+  "PERSONAL_INFO" : "Información Personal",
+  
+  "TUTORIAL_SKIP_BUTTON": "Saltar",
   "TUTORIAL_SLIDE1_TITLE": "Bienvenido/a al Ionic Super Starter",
   "TUTORIAL_SLIDE1_DESCRIPTION": "El <b>Ionic Super Starter</b> es un starter de Ionic completo con muchas páginas preconstruidas y mejores prácticas.",
 
