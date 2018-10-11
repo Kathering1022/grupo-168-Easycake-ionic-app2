@@ -1,5 +1,6 @@
 import { Component, ViewChild } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { TranslateService } from '@ngx-translate/core';
 import { Camera } from '@ionic-native/camera';
 import { IonicPage, NavController, NavParams, ViewController } from 'ionic-angular';
 
@@ -18,11 +19,14 @@ export class PersonalInfoPage {
   form: FormGroup;
   constructor(public navCtrl: NavController, public navParams: NavParams,
     public viewCtrl: ViewController,
+    public translateService: TranslateService,
   	formBuilder: FormBuilder, public camera: Camera) {
   	this.form = formBuilder.group({
       profilePic: [''],
       name: ['', Validators.required],
-      about: ['']
+      phone: [''],
+      address: [''],
+      email: [''],
     });
 
     this.form.valueChanges.subscribe((v) => {
