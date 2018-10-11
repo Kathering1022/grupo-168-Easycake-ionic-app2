@@ -13,7 +13,7 @@
   <div class="splash-info">
   <div class="show-logo"></div>
   </div>
-  <form (submit)="doLogin()">
+  <form>
     <ion-list >
 
       <!--<ion-item>
@@ -32,7 +32,12 @@
       </ion-item>
 
       <div padding>
-        <button ion-button color="elements-easy" block>{{ 'LOGIN_BUTTON' | translate }}</button>
+        <button ion-button block color="elements-easy" (click)="doLogin()">{{ 'LOGIN_BUTTON' | translate }}</button>
+        <button ion-button clear full color="text-easy" center (click)="doSingUp()">{{ 'SIGNUP_BUTTON' | translate }}</button>
+      </div>
+
+      <div padding> 
+        
       </div>
 
     </ion-list>
