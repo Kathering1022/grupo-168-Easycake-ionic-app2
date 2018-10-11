@@ -10,7 +10,10 @@ import { Camera } from '@ionic-native/camera';
  * Ionic pages and navigation.
  */
 
-@IonicPage()
+ @IonicPage({
+   name: 'page-create-product',
+   segment: 'page-create-product'
+ })
 @Component({
   selector: 'page-create-product',
   templateUrl: 'create-product.html',
@@ -28,7 +31,7 @@ export class CreateProductPage {
     testCheckboxOpen: boolean;
     testCheckboxResult;
 
-    constructor(public navCtrl: NavController, public viewCtrl: ViewController, alertCtrl: AlertController, formBuilder: FormBuilder, public camera: Camera) {
+    constructor(public navCtrl: NavController, public viewCtrl: ViewController, public alertCtrl: AlertController, formBuilder: FormBuilder, public camera: Camera) {
       this.form = formBuilder.group({
         profilePic: [''],
         name: ['', Validators.required],
@@ -47,6 +50,12 @@ export class CreateProductPage {
 
     ionViewDidLoad() {
 
+    }
+
+    createItem(){
+      if(this.form.valid){
+        console.log("Ok ingreso");
+      }
     }
 
     getPicture() {
@@ -80,84 +89,45 @@ export class CreateProductPage {
       return 'url(' + this.form.controls['profilePic'].value + ')'
     }
 
-    /**
-     * The user cancelled, so we dismiss without sending data back.
-     */
-    cancel() {
-      this.viewCtrl.dismiss();
-    }
-
-    /**
-     * The user is done and wants to create the item, so return it
-     * back to the presenter.
-     */
-    done() {
-      if (!this.form.valid) { return; }
-      this.viewCtrl.dismiss(this.form.value);
-    }
 
     doCheckbox() {
     let alert = this.alertCtrl.create();
-    alert.setTitle('Which planets have you visited?');
+    alert.setTitle('Elige los ingredientes de tu producto');
 
     alert.addInput({
       type: 'checkbox',
-      label: 'Alderaan',
+      label: 'Bizcocho',
       value: 'value1',
       checked: true
     });
 
     alert.addInput({
       type: 'checkbox',
-      label: 'Bespin',
+      label: 'Cocoa',
       value: 'value2'
     });
 
     alert.addInput({
       type: 'checkbox',
-      label: 'Coruscant',
+      label: 'Queso crema',
       value: 'value3'
     });
 
     alert.addInput({
       type: 'checkbox',
-      label: 'Endor',
+      label: 'Cafe',
       value: 'value4'
     });
 
     alert.addInput({
       type: 'checkbox',
-      label: 'Hoth',
+      label: 'Chantilly',
       value: 'value5'
     });
 
-    alert.addInput({
-      type: 'checkbox',
-      label: 'Jakku',
-      value: 'value6'
-    });
-
-    alert.addInput({
-      type: 'checkbox',
-      label: 'Naboo',
-      value: 'value6'
-    });
-
-    alert.addInput({
-      type: 'checkbox',
-      label: 'Takodana',
-      value: 'value6'
-    });
-
-    alert.addInput({
-      type: 'checkbox',
-      label: 'Tatooine',
-      value: 'value6'
-    });
-
-    alert.addButton('Cancel');
+    alert.addButton('Cancelar');
     alert.addButton({
-      text: 'Okay',
+      text: 'Aceptar',
       handler: data => {
         console.log('Checkbox data:', data);
         this.testCheckboxOpen = false;
