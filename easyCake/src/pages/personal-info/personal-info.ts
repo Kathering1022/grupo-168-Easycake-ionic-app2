@@ -17,6 +17,7 @@ export class PersonalInfoPage {
 
   form: FormGroup;
   constructor(public navCtrl: NavController, public navParams: NavParams,
+    public viewCtrl: ViewController,
   	formBuilder: FormBuilder, public camera: Camera) {
   	this.form = formBuilder.group({
       profilePic: [''],
