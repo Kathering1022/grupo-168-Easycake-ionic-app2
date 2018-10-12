@@ -17,6 +17,14 @@ export class PersonalInfoPage {
   item: any;
 
   form: FormGroup;
+
+  customerInfo: { name:string, address:string, email: string, phone: decimal } = {
+    name: 'Wilmer',
+    address: 'calle 123',
+    phone: 123,
+    email: 'correo@mail.com'
+  };
+
   constructor(public navCtrl: NavController, public navParams: NavParams,
     public viewCtrl: ViewController,
     public translateService: TranslateService,
