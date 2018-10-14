@@ -13,10 +13,10 @@
 </ion-header>
 
 <ion-content>
-  <form *ngIf="form" [formGroup]="form" (submit)="doSignup()">
+  <form *ngIf="formul" [formGroup]="formul" (submit)="doSignup()">
     <input type="file" #fileInput style="visibility: hidden; height: 0px" name="files[]" (change)="processWebImage($event)" />
     <div class="profile-image-wrapper" (click)="getPicture()">
-      <div class="profile-image-placeholder" *ngIf="!this.form.controls.profilePic.value">
+      <div class="profile-image-placeholder" *ngIf="!this.formul.controls.profilePic.value">
         <ion-icon name="add"></ion-icon>
         <div>
           Carga tu foto
@@ -33,6 +33,21 @@
         <ion-label stacked>Apellidos</ion-label>
         <ion-input type="text" [(ngModel)]="account.lastname" name="lastname" formControlName="lastname"></ion-input>
       </ion-item>
+      <form (submit)="doSubmit($event)" [formGroup]="sexForm">
+      <ion-list radio-group formControlName="sex">
+        <ion-list-header>
+        Sexo
+        </ion-list-header>
+        <ion-item>
+          <ion-label>Femenino</ion-label>
+          <ion-radio checked="true" value="fem"></ion-radio>
+        </ion-item>
+        <ion-item>
+          <ion-label>Masculino</ion-label>
+          <ion-radio value="masc"></ion-radio>
+        </ion-item>
+      </ion-list>
+    </form>
       <ion-item>
         <ion-label stacked>Direccion</ion-label>
         <ion-input type="text" [(ngModel)]="account.address" name="address" formControlName="address"></ion-input>
@@ -58,7 +73,7 @@
         <ion-input type="password" [(ngModel)]="account.password" name="password" formControlName="password"></ion-input>
       </ion-item>
       <div padding>
-        <button ion-button color="primary" block>Registrate</button>
+        <button ion-button color="primary" (click)="doAlert()" block>Registrate</button>
       </div>
     </ion-list>
   </form>

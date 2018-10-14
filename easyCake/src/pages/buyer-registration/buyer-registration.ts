@@ -1,6 +1,6 @@
 import { Component, ViewChild } from '@angular/core';
-import { IonicPage, NavController, ToastController } from 'ionic-angular';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { IonicPage, NavController, ToastController, AlertController } from 'ionic-angular';
+import { FormBuilder, Validators, FormGroup, FormControl } from '@angular/forms';
 import { Camera } from '@ionic-native/camera';
 import { TranslateService } from '@ngx-translate/core';
 
@@ -24,7 +24,7 @@ export class BuyerRegistrationPage {
   @ViewChild('fileInput') fileInput;
 
   account: {name: string, lastname: string, address: string,
-    neighbourhood: string, city: string, numbercontact: string,
+    neighbourhood: string, city: string, numbercontact: number,
     email: string, password: string } = {
 
 
@@ -33,22 +33,26 @@ export class BuyerRegistrationPage {
     address: 'Cr 69 bis',
     neighbourhood: 'Carvajal',
     city: 'Bogota',
-    numbercontact: '123456789',
+    numbercontact: 123456789,
     email: 'test@example.com',
     password: 'test'
   };
+
+  sex;
+  sexForm;
 
 
   private signupErrorString: string;
 
   constructor(public navCtrl: NavController,
               public user: User,
+              public alerCtrl: AlertController,
               public toastCtrl: ToastController,
               formBuilder: FormBuilder,
               public camera: Camera,
               public translateService: TranslateService) {
 
-                this.form = formBuilder.group({
+                this.formul = formBuilder.group({
                   profilePic: [''],
                   name: ['', Validators.required],
                   lastname: ['', Validators.required],
@@ -60,13 +64,29 @@ export class BuyerRegistrationPage {
                   password: ['', Validators.required],
                 });
 
-                this.translateService.get('Error de registro').subscribe((value) => {
-                  this.signupErrorString = value;
-                })
+                this.sexForm = new FormGroup({
+                  "sex": new FormControl({value: 'fem', disabled: false})
+                });
+
         }
 
+        doSubmit(event) {
+          console.log('Submitting form', this.sexForm.value);
+          event.preventDefault();
+      }
+
+
+          doAlert() {
+            let alert = this.alerCtrl.create({
+              title: '¡Felicidades!',
+              message: 'Ya puedes hacer uso de nuestra plataforma!',
+              buttons: ['OK']
+            });
+            alert.present();
+          }
 
   doSignup() {
+
     // Attempt to login in through our User service
     this.user.signup(this.account).subscribe((resp) => {
       this.navCtrl.push(MainPage);
@@ -91,7 +111,7 @@ export class BuyerRegistrationPage {
         targetWidth: 96,
         targetHeight: 96
       }).then((data) => {
-        this.form.patchValue({ 'profilePic': 'data:image/jpg;base64,' + data });
+        this.formul.patchValue({ 'profilePic': 'data:image/jpg;base64,' + data });
       }, (err) => {
         alert('Unable to take photo');
       })
@@ -105,14 +125,14 @@ export class BuyerRegistrationPage {
     reader.onload = (readerEvent) => {
 
       let imageData = (readerEvent.target as any).result;
-      this.form.patchValue({ 'profilePic': imageData });
+      this.formul.patchValue({ 'profilePic': imageData });
     };
 
     reader.readAsDataURL(event.target.files[0]);
   }
 
   getProfileImageStyle() {
-    return 'url(' + this.form.controls['profilePic'].value + ')'
+    return 'url(' + this.formul.controls['profilePic'].value + ')'
   }
 
 }

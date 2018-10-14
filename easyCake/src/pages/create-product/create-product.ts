@@ -11,8 +11,7 @@ import { Camera } from '@ionic-native/camera';
  */
 
  @IonicPage({
-   name: 'page-create-product',
-   segment: 'page-create-product'
+
  })
 @Component({
   selector: 'page-create-product',
@@ -31,7 +30,13 @@ export class CreateProductPage {
     testCheckboxOpen: boolean;
     testCheckboxResult;
 
-    constructor(public navCtrl: NavController, public viewCtrl: ViewController, public alertCtrl: AlertController, formBuilder: FormBuilder, public camera: Camera) {
+    constructor(public navCtrl: NavController,
+      public viewCtrl: ViewController,
+      public alertCtrl: AlertController,
+      public alerCtrl: AlertController,
+      formBuilder: FormBuilder,
+      public camera: Camera) {
+
       this.form = formBuilder.group({
         profilePic: [''],
         name: ['', Validators.required],
@@ -50,6 +55,15 @@ export class CreateProductPage {
 
     ionViewDidLoad() {
 
+    }
+
+    doAlert() {
+      let alert = this.alerCtrl.create({
+        title: '¡Felicidades!',
+        message: 'Creaste un nuevo producto!',
+        buttons: ['OK']
+      });
+      alert.present();
     }
 
     createItem(){
