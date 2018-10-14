@@ -18,7 +18,7 @@ export class PersonalInfoPage {
 
   form: FormGroup;
 
-  customerInfo: { name:string, address:string, email: string, phone: decimal } = {
+  customerInfo: { name:string, address:string, email: string, phone: string } = {
     name: 'Wilmer',
     address: 'calle 123',
     phone: 123,
