@@ -40,7 +40,7 @@ export class BuyerRegistrationPage {
 
   sex;
   sexForm;
-
+  form: FormGroup;
 
   private signupErrorString: string;
 

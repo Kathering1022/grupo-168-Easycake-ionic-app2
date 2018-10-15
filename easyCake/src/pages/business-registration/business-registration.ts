@@ -3,7 +3,6 @@ import { TranslateService } from '@ngx-translate/core';
 import { IonicPage, NavController, ToastController, AlertController } from 'ionic-angular';
 
 import { User } from '../../providers';
-import { MainPage } from '../';
 /**
  * Generated class for the BusinessRegistrationPage page.
  *
@@ -33,7 +32,7 @@ export class BusinessRegistrationPage {
 
   };
   // Our translated text strings
-  private signupErrorString: string;
+  public signupErrorString: string;
 
   constructor(public navCtrl: NavController,
     public user: User,
