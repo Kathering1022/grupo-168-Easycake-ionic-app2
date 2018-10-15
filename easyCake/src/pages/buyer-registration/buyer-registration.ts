@@ -52,7 +52,7 @@ export class BuyerRegistrationPage {
               public camera: Camera,
               public translateService: TranslateService) {
 
-                this.formul = formBuilder.group({
+                this.form = formBuilder.group({
                   profilePic: [''],
                   name: ['', Validators.required],
                   lastname: ['', Validators.required],
@@ -111,7 +111,7 @@ export class BuyerRegistrationPage {
         targetWidth: 96,
         targetHeight: 96
       }).then((data) => {
-        this.formul.patchValue({ 'profilePic': 'data:image/jpg;base64,' + data });
+        this.form.patchValue({ 'profilePic': 'data:image/jpg;base64,' + data });
       }, (err) => {
         alert('Unable to take photo');
       })
@@ -125,14 +125,14 @@ export class BuyerRegistrationPage {
     reader.onload = (readerEvent) => {
 
       let imageData = (readerEvent.target as any).result;
-      this.formul.patchValue({ 'profilePic': imageData });
+      this.form.patchValue({ 'profilePic': imageData });
     };
 
     reader.readAsDataURL(event.target.files[0]);
   }
 
   getProfileImageStyle() {
-    return 'url(' + this.formul.controls['profilePic'].value + ')'
+    return 'url(' + this.form.controls['profilePic'].value + ')'
   }
 
 }
