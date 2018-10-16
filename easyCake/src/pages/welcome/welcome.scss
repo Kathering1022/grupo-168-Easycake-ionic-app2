@@ -11,7 +11,7 @@ page-welcome {
 
   @keyframes animatedBackground {
     from { background-position: 0 0; }
-    to { background-position: 100% 0; }
+    to { background-position: 45% 0; }
   }
 
   .splash-info {
@@ -23,7 +23,7 @@ page-welcome {
   .splash-logo {
     margin: auto;
     background: url('../assets/img/appicon.png') repeat transparent;
-    background-size: 100%;
+    background-size: 120%;
     width: 128px;
     height: 128px;
   }
