@@ -1,0 +1,55 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>=</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+	
+	<div>
+		<ion-row>
+          <ion-col width-50>
+            <ion-label left (click)="something()">Hola,</ion-label>
+        	</ion-col>
+		</ion-row>
+	</div>
+
+	<div>
+		<form *ngIf="form" [formGroup]="form" (ngSubmit)="createItem()">
+		    <input type="file" #fileInput style="visibility: hidden; height: 0px" name="files[]" (change)="processWebImage($event)" />
+		    <div class="profile-image-wrapper" (click)="getPicture()">
+		      <div class="profile-image-placeholder" *ngIf="!this.form.controls.profilePic.value">
+		        <ion-icon name="add"></ion-icon>
+		        <div>
+		          Image
+		        </div>
+		      </div>
+		      <div class="profile-image" [style.backgroundImage]="getProfileImageStyle()" *ngIf="this.form.controls.profilePic.value"></div>
+		    </div>
+		    <ion-list>
+					<ion-item>
+						<ion-label color="text-bold-easy">{{ 'PERSONAL_INFO' | translate }}</ion-label>
+					</ion-item>
+					<ion-item>
+						<ion-label fixed>{{ 'NAME' | translate }}</ion-label>
+						<ion-input type="text" placeholder="" formControlName="name" [(ngModel)]="customerInfo.name"></ion-input>
+					</ion-item>
+					<ion-item>
+						<ion-label fixed>{{ 'ADDRESS' | translate }}</ion-label>
+						<ion-input type="text" placeholder="" formControlName="address" [(ngModel)]="customerInfo.address"></ion-input>
+					</ion-item>
+					<ion-item>
+						<ion-label fixed>{{ 'PHONE' | translate }}</ion-label>
+						<ion-input type="text" placeholder="" formControlName="phone" [(ngModel)]="customerInfo.phone"></ion-input>
+					</ion-item>
+					<ion-item>
+						<ion-label fixed>{{ 'EMAIL' | translate }}</ion-label>
+						<ion-input type="text" placeholder="" formControlName="email" [(ngModel)]="customerInfo.email"></ion-input>
+					</ion-item>
+		    </ion-list>
+		  </form>
+	</div>
+</ion-content>
