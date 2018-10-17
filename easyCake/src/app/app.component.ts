@@ -32,6 +32,8 @@ export class MyApp {
     { title: 'Settings', component: 'SettingsPage' },
     { title: 'bakery orders', component: 'BakeryOrdersPage' },
     { title: 'ordering', component: 'OrderingPage' },
+    { title: 'customer orders', component: 'CustomerOrdersPage' },
+    { title: 'homepage', component: 'HomepagePage' },
     { title: 'Search', component: 'SearchPage' }
   ]
 
