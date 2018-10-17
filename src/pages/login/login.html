@@ -1,0 +1,45 @@
+<ion-header>
+
+  <!--ion-navbar>
+    <ion-title>{{ 'LOGIN_TITLE' | translate }}</ion-title>
+  </ion-navbar-->
+
+</ion-header>
+
+
+
+<ion-content>
+  <div class="splash-bg"></div>
+  <div class="splash-info">
+  <div class="show-logo"></div>
+  </div>
+  <form>
+    <ion-list >
+
+      <!--<ion-item>
+        <ion-label fixed>{{ 'EMAIL' | translate }}</ion-label>
+        <ion-input type="email" [(ngModel)]="account.email" name="email"></ion-input>
+      </ion-item>
+    -->
+      <ion-item>
+        <ion-label floating color="text-bold-easy">{{ 'USERNAME' | translate }}</ion-label>
+        <ion-input type="text" [(ngModel)]="account.username" name="username"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label floating color="text-bold-easy">{{ 'PASSWORD' | translate }}</ion-label>
+        <ion-input type="password" [(ngModel)]="account.password" name="password"></ion-input>
+      </ion-item>
+
+      <div padding>
+        <button ion-button block color="elements-easy" (click)="doLogin()">{{ 'LOGIN_BUTTON' | translate }}</button>
+        <button ion-button clear full color="text-easy" center (click)="doSingUp()">{{ 'SIGNUP_BUTTON' | translate }}</button>
+      </div>
+
+      <div padding> 
+        
+      </div>
+
+    </ion-list>
+  </form>
+</ion-content>

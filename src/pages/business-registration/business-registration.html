@@ -1,0 +1,61 @@
+<!--
+  Generated template for the BusinessRegistrationPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>¡Registra tu negocio!</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+  <form>
+    <ion-list>
+      <ion-item>
+        <ion-label stacked>Nit</ion-label>
+        <ion-input type="text" [(ngModel)]="account.nit" name="nit"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label stacked>Razon Social</ion-label>
+        <ion-input type="text" [(ngModel)]="account.name" name="name"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label stacked>Actividad economica</ion-label>
+        <ion-input type="text" [(ngModel)]="account.activity" name="activity"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label stacked>Direccion</ion-label>
+        <ion-input type="text" [(ngModel)]="account.address" name="address"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label stacked>Barrio</ion-label>
+        <ion-input type="text" [(ngModel)]="account.neighbourhood" name="neighbourhood"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label stacked>Ciudad</ion-label>
+        <ion-input type="text" [(ngModel)]="account.city" name="city"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label stacked>Numero de Contacto</ion-label>
+        <ion-input type="number" [(ngModel)]="account.numbercontact" name="numbercontact"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label stacked>Email</ion-label>
+        <ion-input type="email" [(ngModel)]="account.email" name="email"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label stacked>Sitio Web</ion-label>
+        <ion-input type="text" [(ngModel)]="account.web" name="web"></ion-input>
+      </ion-item>
+      <div>
+        <button ion-button color="primary" (click)="doAlert()" block>Actualizar</button>
+      </div>
+
+    </ion-list>
+  </form>
+</ion-content>
