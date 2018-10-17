@@ -7,6 +7,8 @@
   "PASSWORD": "Password",
   "LOGIN": "Sign in",
   "SIGNUP": "Sign up",
+  "ADDRESS":"Address",
+  "PHONE": "Phone",
 
   "TAB1_TITLE": "Items",
   "TAB2_TITLE": "Search",
