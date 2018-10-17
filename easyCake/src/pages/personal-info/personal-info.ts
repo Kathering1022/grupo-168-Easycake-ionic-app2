@@ -21,7 +21,7 @@ export class PersonalInfoPage {
   customerInfo: { name:string, address:string, email: string, phone: string } = {
     name: 'Wilmer',
     address: 'calle 123',
-    phone: 123,
+    phone: '123',
     email: 'correo@mail.com'
   };
 

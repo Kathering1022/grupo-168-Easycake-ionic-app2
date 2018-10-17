@@ -1,0 +1,80 @@
+<!--
+  Generated template for the BuyerRegistrationPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>¡Registrate Comprador!</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content>
+  <form *ngIf="form" [formGroup]="form" (submit)="doSignup()">
+    <input type="file" #fileInput style="visibility: hidden; height: 0px" name="files[]" (change)="processWebImage($event)" />
+    <div class="profile-image-wrapper" (click)="getPicture()">
+      <div class="profile-image-placeholder" *ngIf="!this.form.controls.profilePic.value">
+        <ion-icon name="add"></ion-icon>
+        <div>
+          Carga tu foto
+        </div>
+      </div>
+      <div class="profile-image" [style.backgroundImage]="getProfileImageStyle()"></div>
+    </div>
+    <ion-list>
+      <ion-item>
+        <ion-label stacked>Nombres</ion-label>
+        <ion-input type="text" [(ngModel)]="account.name" name="name" formControlName="name"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label stacked>Apellidos</ion-label>
+        <ion-input type="text" [(ngModel)]="account.lastname" name="lastname" formControlName="lastname"></ion-input>
+      </ion-item>
+      <form (submit)="doSubmit($event)" [formGroup]="sexForm">
+      <ion-list radio-group formControlName="sex">
+        <ion-list-header>
+        Sexo
+        </ion-list-header>
+        <ion-item>
+          <ion-label>Femenino</ion-label>
+          <ion-radio checked="true" value="fem"></ion-radio>
+        </ion-item>
+        <ion-item>
+          <ion-label>Masculino</ion-label>
+          <ion-radio value="masc"></ion-radio>
+        </ion-item>
+      </ion-list>
+    </form>
+      <ion-item>
+        <ion-label stacked>Direccion</ion-label>
+        <ion-input type="text" [(ngModel)]="account.address" name="address" formControlName="address"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label stacked>Barrio</ion-label>
+        <ion-input type="text" [(ngModel)]="account.neighbourhood" name="neighbourhood" formControlName="neighbourhood"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label stacked>Ciudad</ion-label>
+        <ion-input type="text" [(ngModel)]="account.city" name="city" formControlName="city"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label stacked>Numero de Contacto</ion-label>
+        <ion-input type="number" [(ngModel)]="account.numbercontact" name="numbercontact" formControlName="numbercontact"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label stacked>Correo electronico</ion-label>
+        <ion-input type="email" [(ngModel)]="account.email" name="email" formControlName="email"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label stacked>Contraseña</ion-label>
+        <ion-input type="password" [(ngModel)]="account.password" name="password" formControlName="password"></ion-input>
+      </ion-item>
+      <div padding>
+        <button ion-button color="primary" (click)="doAlert()" block>Registrate</button>
+      </div>
+    </ion-list>
+  </form>
+</ion-content>
