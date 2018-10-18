@@ -7,6 +7,7 @@ import { TranslateService } from '@ngx-translate/core';
 
 import { User } from '../../providers';
 import { MainPage } from '../';
+import { Login } from '../';
 /**
  * Generated class for the BuyerRegistrationPage page.
  *
@@ -80,7 +81,10 @@ export class BuyerRegistrationPage {
             let alert = this.alerCtrl.create({
               title: '¡Felicidades!',
               message: 'Ya puedes hacer uso de nuestra plataforma!',
-              buttons: ['OK']
+              buttons: [{
+                text:'OK',
+                handler: ()=>{this.navCtrl.push(Login);}
+              }]
             });
             alert.present();
           }
@@ -89,10 +93,10 @@ export class BuyerRegistrationPage {
 
     // Attempt to login in through our User service
     this.user.signup(this.account).subscribe((resp) => {
-      this.navCtrl.push(MainPage);
+      this.navCtrl.push(Login);
     }, (err) => {
 
-      this.navCtrl.push(MainPage);
+      this.navCtrl.push(Login);
 
       // Unable to sign up
       let toast = this.toastCtrl.create({

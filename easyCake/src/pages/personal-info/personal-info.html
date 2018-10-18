@@ -8,7 +8,7 @@
 
 
 <ion-content padding>
-	
+	<!--
 	<div>
 		<ion-row>
           <ion-col width-50>
@@ -16,7 +16,7 @@
         	</ion-col>
 		</ion-row>
 	</div>
-
+-->
 	<div>
 		<form *ngIf="form" [formGroup]="form" (ngSubmit)="createItem()">
 		    <input type="file" #fileInput style="visibility: hidden; height: 0px" name="files[]" (change)="processWebImage($event)" />

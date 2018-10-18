@@ -8,6 +8,17 @@
 
   <ion-navbar>
     <ion-title>¡Registrate Comprador!</ion-title>
+    <ion-buttons start>
+      <button ion-button (click)="cancel()">
+        <span color="primary" showWhen="ios">
+          Cancelar
+        </span>
+        <ion-icon name="md-close" showWhen="android,windows"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-buttons end>
+
+    </ion-buttons>
   </ion-navbar>
 
 </ion-header>
@@ -22,7 +33,7 @@
           Carga tu foto
         </div>
       </div>
-      <div class="profile-image" [style.backgroundImage]="getProfileImageStyle()"></div>
+      <div class="profile-image" [style.backgroundImage]="getProfileImageStyle()" *ngIf="this.form.controls.profilePic.value"></div>
     </div>
     <ion-list>
       <ion-item>
