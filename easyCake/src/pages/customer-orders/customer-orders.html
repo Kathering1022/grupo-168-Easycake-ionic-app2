@@ -13,6 +13,72 @@
 </ion-header>
 
 
+
 <ion-content padding>
+
+  <div padding>
+    <ion-segment [(ngModel)]="Pedidos">
+      <ion-segment-button value="entregados">
+        Pedidos entregados
+      </ion-segment-button>
+      <ion-segment-button value="Pendientes">
+        Pedidos Pendientes
+      </ion-segment-button>
+    </ion-segment>
+  </div>
+
+  <div [ngSwitch]="Pedidos">
+    <ion-list *ngSwitchCase="'Pendientes'">
+      <ion-item>
+
+        <p padding>
+          Juan Perez,
+          </p>
+          <ion-grid>
+            <ion-row>
+              <ion-col>
+                <div>fecha<br>07/04/02</div>
+              </ion-col>
+              <ion-col>
+                <div>producto <br>brownie</div>
+              </ion-col>
+              <ion-col>
+                <div>cantidad<br>27</div>
+              </ion-col>
+              <ion-col>
+                <div>pedido a: <br>pasteleria delicatto</div>
+              </ion-col>
+            </ion-row>
+
+        </ion-grid>
+
+      </ion-item>
+
+    </ion-list>
+
+    <ion-list *ngSwitchCase="'entregados'">
+      <ion-item>
+        <p padding>
+        Juan Perez,
+        </p>
+        <ion-grid>
+          <ion-row>
+            <ion-col>
+              <div>fecha<br>07/05/02</div>
+            </ion-col>
+            <ion-col>
+              <div>producto <br>cupcake</div>
+            </ion-col>
+            <ion-col>
+              <div>cantidad<br>2</div>
+            </ion-col>
+            <ion-col>
+              <div>pedido a: <br>panaderia luis</div>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </ion-item>
+    </ion-list>
+  </div>
 
 </ion-content>
