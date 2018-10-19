@@ -15,7 +15,7 @@ export class UserServiceProvider {
   }
 
   getUsers() {
-    return this.http.get('https://randomuser.me/api/?results=25');
+    return this.http.get('https://randomuser.me/api/?results=1');
   }
 
 

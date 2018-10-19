@@ -7,6 +7,9 @@
   "SIGNUP": "Registrarse",
   "ADDRESS": "Dirección",
   "PHONE": "Telefono",
+  "BACK_BUTTON_TEXT" : "Atras",
+  "PROFILE": "Perfil",
+  "SAVE": "Guardar",
 
   "TAB1_TITLE": "Items",
   "TAB2_TITLE": "Buscar",
