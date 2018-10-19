@@ -3,10 +3,11 @@ import { IonicPage, NavController, ToastController, AlertController } from 'ioni
 import { FormBuilder, Validators, FormGroup, FormControl } from '@angular/forms';
 import { Camera } from '@ionic-native/camera';
 import { TranslateService } from '@ngx-translate/core';
+import { UserServiceProvider } from '../../providers/user-service/user-service';
 
 
 import { User } from '../../providers';
-import { MainPage } from '../';
+//import { MainPage } from '../';
 import { Login } from '../';
 /**
  * Generated class for the BuyerRegistrationPage page.
@@ -23,6 +24,7 @@ import { Login } from '../';
 
 export class BuyerRegistrationPage {
   @ViewChild('fileInput') fileInput;
+  users: any[] = [];
 
   account: {name: string, lastname: string, address: string,
     neighbourhood: string, city: string, numbercontact: number,
@@ -51,7 +53,8 @@ export class BuyerRegistrationPage {
               public toastCtrl: ToastController,
               formBuilder: FormBuilder,
               public camera: Camera,
-              public translateService: TranslateService) {
+              public translateService: TranslateService,
+              public userServiceProvider: UserServiceProvider) {
 
                 this.form = formBuilder.group({
                   profilePic: [''],
@@ -70,6 +73,18 @@ export class BuyerRegistrationPage {
                 });
 
         }
+
+        ionViewDidLoad(){
+            this.userServiceProvider.getUsers()
+              .subscribe(
+                  (data) => { // Success
+                      this.users = data['results'];
+                      },
+      (error) =>{
+        console.error(error);
+      }
+    )
+  }
 
         doSubmit(event) {
           console.log('Submitting form', this.sexForm.value);
