@@ -19,7 +19,7 @@ export class MyApp {
     //{ title: 'Tutorial', component: 'TutorialPage' },
     //{ title: 'Welcome', component: 'WelcomePage' },
     { title: 'Crear Producto', component: 'CreateProductPage' },
-    //{ title: 'Registrate', component: 'BuyerRegistrationPage' },
+    { title: 'Registrate', component: 'BuyerRegistrationPage' },
     { title: 'Registra tu negocio', component: 'BusinessRegistrationPage' },
     //{ title: 'Tabs', component: 'TabsPage' },
     //{ title: 'Cards', component: 'CardsPage' },
