@@ -8,11 +8,34 @@
 
   <ion-navbar>
     <ion-title>¡Registrate Comprador!</ion-title>
+    <ion-buttons start>
+      <button ion-button (click)="cancel()">
+        <span color="primary" showWhen="ios">
+          Cancelar
+        </span>
+        <ion-icon name="md-close" showWhen="android,windows"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-buttons end>
+
+    </ion-buttons>
   </ion-navbar>
 
 </ion-header>
 
 <ion-content>
+  <ion-list>
+    <ion-item *ngFor="let user of users">
+      <ion-avatar item-start>
+        <img [src]="user.picture.medium">
+      </ion-avatar>
+      <h2>{{ user.name.first | uppercase }}</h2>
+      <p>{{ user.email }}</p>
+    </ion-item>
+  </ion-list>
+
+
+
   <form *ngIf="form" [formGroup]="form" (submit)="doSignup()">
     <input type="file" #fileInput style="visibility: hidden; height: 0px" name="files[]" (change)="processWebImage($event)" />
     <div class="profile-image-wrapper" (click)="getPicture()">
@@ -22,7 +45,7 @@
           Carga tu foto
         </div>
       </div>
-      <div class="profile-image" [style.backgroundImage]="getProfileImageStyle()"></div>
+      <div class="profile-image" [style.backgroundImage]="getProfileImageStyle()" *ngIf="this.form.controls.profilePic.value"></div>
     </div>
     <ion-list>
       <ion-item>

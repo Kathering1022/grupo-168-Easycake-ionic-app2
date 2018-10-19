@@ -3,7 +3,9 @@ import { TranslateService } from '@ngx-translate/core';
 import { IonicPage, NavController, ToastController, AlertController } from 'ionic-angular';
 
 import { User } from '../../providers';
-import { MainPage } from '../';
+//import { MainPage } from '../';
+import { Register } from '../';
+import { InfoPersonal } from '../';
 
 @IonicPage()
 @Component({
@@ -37,9 +39,9 @@ export class LoginPage {
   // Attempt to login in through our User service
  doLogin() {
     this.user.login(this.account).subscribe((resp) => {
-      this.navCtrl.push(MainPage);
+      this.navCtrl.push(InfoPersonal);
     }, (err) => {
-      this.navCtrl.push(MainPage);
+      this.navCtrl.push(InfoPersonal);
       // Unable to log in
       let toast = this.toastCtrl.create({
         message: this.loginErrorString,
@@ -54,7 +56,13 @@ doSingUp() {
   let alert = this.alerCtrl.create({
       title: '¡Para empezar!',
       message: '¿Qué quieres hacer?',
-      buttons: ['Vender','Comprar']
+      buttons: [{
+        text:'Vender',
+        handler: ()=>{this.navCtrl.push(Register);}
+      },{
+        text:'Comprar',
+        handler: ()=>{this.navCtrl.push(Register);}
+      }]
     });
     alert.present();
 }
