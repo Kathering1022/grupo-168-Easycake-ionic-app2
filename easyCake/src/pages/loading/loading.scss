@@ -1,0 +1,22 @@
+page-loading {
+	.backgroundE	{
+		background-image: url('../assets/img/background.jpg');
+	}
+
+	.splash-intro {
+    	font-size: 30px;
+    	font-weight: bold;
+    	max-width: 70%;
+    	margin: auto;
+  	}
+
+  	.splash-bg {
+    position: relative;
+    background: url('../assets/img/loading.png') no-repeat transparent;
+    background-size: cover;
+    height: 80%;
+    x-index: 1;
+    background-repeat: repeat-y;
+    animation: animatedBackground 10s linear infinite;
+  }
+}
