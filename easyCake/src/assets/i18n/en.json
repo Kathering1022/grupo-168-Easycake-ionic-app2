@@ -9,6 +9,9 @@
   "SIGNUP": "Sign up",
   "ADDRESS":"Address",
   "PHONE": "Phone",
+  "BACK_BUTTON_TEXT" : "Back",
+  "PROFILE": "Profile",
+  "SAVE": "Save",
 
   "TAB1_TITLE": "Items",
   "TAB2_TITLE": "Search",

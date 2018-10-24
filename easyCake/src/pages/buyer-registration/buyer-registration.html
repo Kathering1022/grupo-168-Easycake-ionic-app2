@@ -7,18 +7,7 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>¡Registrate Comprador!</ion-title>
-    <ion-buttons start>
-      <button ion-button (click)="cancel()">
-        <span color="primary" showWhen="ios">
-          Cancelar
-        </span>
-        <ion-icon name="md-close" showWhen="android,windows"></ion-icon>
-      </button>
-    </ion-buttons>
-    <ion-buttons end>
-
-    </ion-buttons>
+    <ion-title>¡Registrate!</ion-title>
   </ion-navbar>
 
 </ion-header>
@@ -96,7 +85,7 @@
         <ion-input type="password" [(ngModel)]="account.password" name="password" formControlName="password"></ion-input>
       </ion-item>
       <div padding>
-        <button ion-button color="primary" (click)="doAlert()" block>Registrate</button>
+        <button ion-button color="elements-easy" (click)="doAlert()" block>Registrate</button>
       </div>
     </ion-list>
   </form>

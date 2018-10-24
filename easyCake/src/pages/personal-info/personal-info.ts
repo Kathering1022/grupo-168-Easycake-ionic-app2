@@ -42,10 +42,6 @@ export class PersonalInfoPage {
     });
   }
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad PersonalInfoPage');
-  }
-
   getPicture() {
     if (Camera['installed']()) {
       this.camera.getPicture({
